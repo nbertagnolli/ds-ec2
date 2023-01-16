@@ -112,7 +112,6 @@ class DsEc2Stack(Stack):
         # Install python dependencies.
         pkgs_to_install = " ".join(python_pkgs + python_other_pkgs)
         install_dependencies = ec2.UserData.for_linux()
-        print(f"{env_activate_cmd} pip install {pkgs_to_install}")
         install_dependencies.add_commands(
             f"{env_activate_cmd} pip install {pkgs_to_install}"
         )
