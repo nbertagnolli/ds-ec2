@@ -1,0 +1,12 @@
+matplotlib
+seaborn
+numpy
+datasets
+pandas
+scikit-learn
+boto3
+nltk
+transformers
+spacy
+jupyter
+jupyterlab
