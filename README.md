@@ -93,6 +93,17 @@ host i-* mi-*
 
 Enjoy!
 
+## VSCode Connection
+
+If you'd like to setup VSCode to conenct to your instance. You'll need to add some additional SSH configs. You'll
+need to copy the host id of the instance and get your organization id. But with this command VSCode should be able to connect to the remote instance.
+
+```
+Host <host-id>
+  User ec2-user
+  ProxyCommand sh -c "aws sso login --profile <org-id>; export AWS_PROFILE=<org-id>; export AWS_REGION=<region>; aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"
+```
+
 
 ## Useful commands
 
